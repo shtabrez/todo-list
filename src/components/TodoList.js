@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Button, Icon } from 'semantic-ui-react';
 
 function TodoList() {
     const [activity, setActivity] = useState("");
@@ -36,7 +37,7 @@ function TodoList() {
                             <p key={i}>
                                 <div className='row'>
                                     <div className='listData'>{data}</div>
-                                    <button className='btn' onClick={() => removeActivity(i)} >remove(-)</button>
+                                    <Button className='btn' color='red' onClick={() => removeActivity(i)} >Delete</Button>
                                 </div>
 
                             </p>
@@ -44,7 +45,7 @@ function TodoList() {
                     )
                 })}
                 {listData.length >= 1 &&
-                    <button className='remove-btn' onClick={removeAll}>Remove All</button>}
+                    <Button className='remove-btn' color='red' onClick={removeAll}>Delete All</Button>}
 
             </div>
         </>
